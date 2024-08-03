@@ -31,17 +31,17 @@ describe('UserInputFormComponent', () => {
   });
 
   it('should add a workout when the form is submitted', () => {
-    spyOn(component.userWorkoutAdded, 'emit'); // Spy on the emit method
+    spyOn(component.userWorkoutAdded, 'emit'); 
 
-    // Set form values and submit
+ 
     component.workouts = [{ type: 'Running', minutes: 30 }];
     fixture.detectChanges();
 
-    // Trigger form submission
+   
     const submitButton = fixture.debugElement.query(By.css('button[type="submit"]'));
     submitButton.triggerEventHandler('click', null);
 
-    // Verify that emit was called with correct parameters
+   
     expect(component.userWorkoutAdded.emit).toHaveBeenCalledWith(jasmine.objectContaining({
       type: 'Running',
       minutes: 30
