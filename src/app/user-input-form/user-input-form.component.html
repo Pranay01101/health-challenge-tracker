@@ -1,0 +1,31 @@
+<form (ngSubmit)="onSubmit()" #form="ngForm" class="p-4 space-y-4 bg-white shadow-md rounded-md">
+  <mat-form-field appearance="fill" class="w-full">
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="username" name="username" required #usernameInput="ngModel" class="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+    <mat-error *ngIf="usernameInput.invalid && (usernameInput.dirty || usernameInput.touched)">
+      Username is required.
+    </mat-error>
+  </mat-form-field>
+
+  <div *ngFor="let workout of workouts; let i = index" class="space-y-4">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Workout Type</mat-label>
+      <mat-select [(ngModel)]="workouts[i].type" name="type{{i}}" required class="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+        <mat-option *ngFor="let type of workoutTypes" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Minutes</mat-label>
+      <input matInput type="number" [(ngModel)]="workouts[i].minutes" name="minutes{{i}}" required class="border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+      <mat-error *ngIf="workouts[i].minutes <= 0">
+        Minutes are required and must be a positive number.
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="flex justify-between items-center mt-4">
+    <button mat-raised-button color="primary" type="button" (click)="addWorkout()" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add Another Workout</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Submit</button>
+  </div>
+</form>

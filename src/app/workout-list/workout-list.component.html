@@ -1,0 +1,57 @@
+<div class="p-4 space-y-6 bg-white shadow-md rounded-md">
+  <h2 class="text-2xl font-semibold text-center">Workout List</h2>
+
+  <div class="space-y-4">
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Search workouts</mat-label>
+      <input 
+        matInput 
+        [(ngModel)]="searchTerm" 
+        (input)="filterWorkouts()" 
+        placeholder="Search workouts" 
+        class="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+      />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-full">
+      <mat-label>Filter by type</mat-label>
+      <mat-select 
+        [(ngModel)]="filterType" 
+        (selectionChange)="filterWorkouts()" 
+        class="border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+      >
+        <mat-option value="">All</mat-option>
+        <mat-option *ngFor="let type of workoutTypes" [value]="type">{{ type }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <mat-list class="space-y-2">
+    <mat-list-item 
+      *ngFor="let workout of paginatedWorkouts" 
+      class="bg-gray-100 p-2 rounded-md shadow-sm"
+    >
+      <span class="font-medium">{{ workout.username }}</span> - {{ workout.type }} - {{ workout.minutes }} minutes
+    </mat-list-item>
+  </mat-list>
+
+  <div class="flex justify-between items-center mt-4">
+    <button 
+      mat-button 
+      (click)="previousPage()" 
+      [disabled]="currentPage === 1" 
+      class="px-2 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50"
+    >
+      &lt;
+    </button>
+    <span class="text-xs">Page {{ currentPage }} of {{ totalPages }}</span>
+    <button 
+      mat-button 
+      (click)="nextPage()" 
+      [disabled]="currentPage === totalPages" 
+      class="px-2 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50"
+    >
+      &gt;
+    </button>
+  </div>
+</div>
