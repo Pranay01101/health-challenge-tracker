@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
     if (isPlatformBrowser(this.platformId)) {
       this.saveWorkoutsToLocalStorage();
     }
-    this.currentPage = 1; // Reset to first page when new data is added
+    this.currentPage = 1; 
   }
 
   saveWorkoutsToLocalStorage() {
@@ -92,7 +92,7 @@ export class AppComponent implements OnInit {
 
     const aggregatedArray = Object.values(aggregated).map(agg => ({
       ...agg,
-      types: Array.from(new Set(agg.types)) // Remove duplicate types
+      types: Array.from(new Set(agg.types))
     }));
 
     return aggregatedArray.slice((this.currentPage - 1) * this.itemsPerPage, this.currentPage * this.itemsPerPage);
