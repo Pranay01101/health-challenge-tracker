@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -10,7 +10,7 @@ describe('AppComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         BrowserAnimationsModule,
-        AppComponent // Import standalone component here
+        AppComponent 
       ],
     }).compileComponents();
   });
