@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WorkoutListComponent } from './workout-list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 describe('WorkoutListComponent', () => {
   let component: WorkoutListComponent;
@@ -10,7 +10,7 @@ describe('WorkoutListComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         BrowserAnimationsModule,
-        WorkoutListComponent // Import standalone component here
+        WorkoutListComponent 
       ],
     }).compileComponents();
   });
