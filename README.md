@@ -22,6 +22,18 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
+## Code Coverage
+
+To view the code coverage report, run `ng test --coverage` after running the unit tests. The coverage report will be generated in the `coverage` directory.
+
+## Hosted Web App
+
+You can view the hosted web application at [Heroku](https://your-heroku-app-url.herokuapp.com/).
+
+## GitHub Repository
+
+The GitHub repository for this project is available at [https://github.com/Pranay01101/health-challenge-tracker](https://github.com/Pranay01101/health-challenge-tracker).
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
