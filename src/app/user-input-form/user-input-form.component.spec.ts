@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Import BrowserAnimationsModule
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { By } from '@angular/platform-browser';
 
 describe('UserInputFormComponent', () => {
@@ -19,7 +19,7 @@ describe('UserInputFormComponent', () => {
         MatInputModule,
         MatButtonModule,
         BrowserAnimationsModule,
-        UserInputFormComponent // Ensure the component is correctly imported
+        UserInputFormComponent 
       ],
     }).compileComponents();
   });
